@@ -1,68 +1,76 @@
-🛒 Grab It - MERN Stack E-Commerce Website
+# 🛒 Grab It - MERN Stack E-Commerce Website
 
-📌 Project Overview
+This is a fully functional e-commerce website built using the **MERN stack (MongoDB, Express.js, React.js, Node.js)**. The platform allows users to browse products, add them to the cart, manage addresses, place orders, and make payments using Stripe.
 
-Grab It is a fully functional e-commerce web application built using the MERN (MongoDB, Express.js, React, Node.js) stack. It allows users to browse products, add items to their cart, manage addresses, place orders, and complete payments using Stripe.
+## 🌟 Features
 
-🚀 Features
+- 🔐 **User Authentication** - Register, login, email verification, and password reset.
+- 🛍 **Product Management** - View products, categories, and subcategories.
+- 🛒 **Shopping Cart** - Add, remove, and update cart items.
+- 🚚 **Address Management** - Save and manage multiple shipping addresses.
+- 💳 **Secure Payments** - Integrated with **Stripe** for smooth transactions.
+- 📦 **Order Tracking** - Users can track their order history.
+- 📡 **Cloud Image Upload** - Upload product images using Cloudinary.
+- 🛠 **Admin Panel (Optional)** - Manage users, products, and orders.
 
-🔹 User Authentication (Register, Login, Logout)
+## 🚀 Tech Stack
 
-🔹 Email Verification & Password Reset
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB (Mongoose)
+- **Authentication**: JWT (JSON Web Token)
+- **Payment Gateway**: Stripe
+- **Image Hosting**: Cloudinary
 
-🔹 Product Management (Add, Edit, Delete, View)
+## 📦 Installation
 
-🔹 Category & Subcategory Organization
+1️⃣ **Clone the repository**:  
+```sh
+git clone https://github.com/your-username/Grab-It.git
+cd Grab-It
+```
 
-🔹 Shopping Cart & Address Management
+2️⃣ **Install dependencies**:  
+- Backend:  
+```sh
+cd server
+npm install
+```
+- Frontend:  
+```sh
+cd client
+npm install
+```
 
-🔹 Secure Payment Integration (Stripe)
+3️⃣ **Set up environment variables**:  
+Create a `.env` file in the **server** folder and add the necessary **MongoDB, Stripe, and Cloudinary keys**.
 
-🔹 Order History & Order Management
+4️⃣ **Run the backend**:  
+```sh
+cd server
+npm run dev
+```
 
-🔹 Responsive & User-Friendly UI
+5️⃣ **Run the frontend**:  
+```sh
+cd client
+npm run dev
+```
 
-🏗 Tech Stack
+## 💳 Payment Testing
 
-Frontend: React, Tailwind CSS, React Router, Redux Toolkit
+To test the payment functionality, use the following **Stripe test card**:  
+- **Card Number**: `4242 4242 4242 4242`  
+- **Expiry**: Any future date  
+- **CVC**: Any 3-digit number  
 
-Backend: Node.js, Express.js, MongoDB, Mongoose
+⚠️ This is a **test card** provided by Stripe and does not process real payments.
 
-Authentication: JWT (JSON Web Token)
+## 🎯 Future Enhancements
 
-Payment Gateway: Stripe
-
-Image Hosting: Cloudinary
-
-📦 Installation
-
-Clone the repository:
-
-Install dependencies for the backend:
-
-Install dependencies for the frontend:
-
-Set up environment variables:
-
-Create a .env file in the server folder and add the necessary MongoDB, Stripe, and Cloudinary keys.
-
-Run the backend:
-
-Run the frontend:
-
-💳 Payment Testing
-
-To test the payment functionality, use the following Stripe test card:
-
-4242 4242 4242
-
-🎯 Future Enhancements
-
-📌 Implement Wishlist Feature
-
-📌 Add Reviews & Ratings for Products
-
-📌 Introduce Admin Panel for Better Management
+✅ **Implement Wishlist Feature**  
+✅ **Add Reviews & Ratings for Products**  
+✅ **Introduce Admin Panel for Better Management**  
 
 ### 🚀 **Live Demo:** *https://grabit-sand.vercel.app*  
-💡 Contributions are welcome! If you encounter any issues or have suggestions for improvements, feel free to create an issue or submit a pull request. 🚀
+💡 **Contributions are welcome!** If you encounter any issues or have suggestions for improvements, feel free to create an issue or submit a pull request. 🚀
