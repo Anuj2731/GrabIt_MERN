@@ -48,39 +48,47 @@ const AddToCartButton = ({ data }) => {
 
     //checking this item in cart or not
     useEffect(() => {
-        const checkingitem = cartItem.some(item => item.productId._id === data._id)
-        setIsAvailableCart(checkingitem)
-
-        const product = cartItem.find(item => item.productId._id === data._id)
-        setQty(product?.quantity)
-        setCartItemsDetails(product)
-    }, [data, cartItem])
-
-
-    const increaseQty = async(e) => {
-        e.preventDefault()
-        e.stopPropagation()
+        if (!cartItem || !data) return;
     
-       const response = await  updateCartItem(cartItemDetails?._id,qty+1)
+        const product = cartItem.find(item => item.productId?._id === data._id);
         
-       if(response.success){
-        toast.success("Item Added")
-       }
-    }
+        setIsAvailableCart(!!product);
+        setQty(product?.quantity || 0);
+        setCartItemsDetails(product || null);
+    }, [data, cartItem]);
 
-    const decreaseQty = async(e) => {
-        e.preventDefault()
-        e.stopPropagation()
-        if(qty === 1){
-            deleteCartItem(cartItemDetails?._id)
-        }else{
-            const response = await updateCartItem(cartItemDetails?._id,qty-1)
 
-            if(response.success){
-                toast.success("Item Removed")
+const increaseQty = async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (!cartItemDetails?._id) return;
+    
+        const response = await updateCartItem(cartItemDetails._id, qty + 1);
+        
+        if (response?.success) {
+            toast.success("Item Added");
+            setQty(qty + 1);
+        }
+    };
+    
+    const decreaseQty = async (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        if (!cartItemDetails?._id) return;
+    
+        if (qty === 1) {
+            await deleteCartItem(cartItemDetails._id);
+        } else {
+            const response = await updateCartItem(cartItemDetails._id, qty - 1);
+            
+            if (response?.success) {
+                toast.success("Item Removed");
+                setQty(qty - 1);
             }
         }
-    }
+    };
     return (
         <div className='w-full max-w-[150px]'>
             {
